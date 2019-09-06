@@ -49,7 +49,7 @@
 
     headline.textContent = object.headline;
     image.src = object.authorPhoto;
-    authorsName.textContent = `By ${object.authorName}`;
+    authorsName.textContent = `{object.authorName}`;
 
     card.appendChild(headline);
     card.appendChild(author);
