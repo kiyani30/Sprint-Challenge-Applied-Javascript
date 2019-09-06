@@ -59,8 +59,7 @@
 
     headline.textContent = object.headline;
     image.src = object.authorPhoto;
-    articleByAuthor.textContent = `${object.authorName}`;
-    // card.textContent = `${authorName}` ;
+    authorsName.textContent = `${object.authorName}`;
 
     return card;
 }
@@ -73,18 +72,18 @@
         const arrayOfObjectsValues = Object.values(articlesByTopicObject);
 
         arrayOfObjectsValues.forEach(response => {
-        data.forEach(array => {
+        response.forEach(array => {
             articlesArr.push(array);
  });
  });
 
  articlesArr.forEach(object => {
-    let newArticle = Article(object);
+    let newArticle = CardMaker(object);
     const cardsContainer = document.querySelector(".cards-container");
     cardsContainer.appendChild(newArticle);
     });
  })
 
     .catch(response => {
-    console.log("Error message for API call!");
+    console.log(response);
  });
